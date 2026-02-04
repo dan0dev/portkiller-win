@@ -4,6 +4,17 @@ A Windows port of [Port Killer](https://github.com/jamiepine/port-killer) by [@j
 
 This version has been rebuilt for Windows using Tauri 2.0, React, TypeScript, and Tailwind CSS.
 
+## Download
+
+**[Download Latest Release](https://github.com/dan0dev/portkiller-win/releases/latest)**
+
+| Installer | Description |
+|-----------|-------------|
+| [PortKiller_1.0.0_x64-setup.exe](https://github.com/dan0dev/portkiller-win/releases/download/v1.0.0/PortKiller_1.0.0_x64-setup.exe) | NSIS Installer (recommended) |
+| [PortKiller_1.0.0_x64_en-US.msi](https://github.com/dan0dev/portkiller-win/releases/download/v1.0.0/PortKiller_1.0.0_x64_en-US.msi) | MSI Installer |
+
+**Requirements:** Windows 10/11 with WebView2 Runtime (pre-installed on most systems)
+
 ## Features
 
 - **Port Scanning**: Real-time scanning of all listening ports using `netstat`
@@ -17,31 +28,34 @@ This version has been rebuilt for Windows using Tauri 2.0, React, TypeScript, an
 - **Windows Notifications**: Get alerts when watched ports start/stop
 - **Launch at Startup**: Optional autostart with Windows
 
-## Prerequisites
+## Keyboard Shortcuts
 
-1. **Node.js** (v18 or later)
-   - Download from: https://nodejs.org/
+| Shortcut | Action |
+|----------|--------|
+| Ctrl+R | Refresh ports |
+| Ctrl+K | Focus search |
+| Ctrl+, | Open settings |
+| Delete | Kill selected process |
+| Escape | Close panel/modal |
 
-2. **Rust** (latest stable)
-   - Install via rustup: https://rustup.rs/
-   - Run: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-   - Or download the Windows installer from the website
+## Building from Source
 
-3. **Microsoft Visual Studio C++ Build Tools**
-   - Required for compiling native Windows code
-   - Download from: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+### Prerequisites
+
+1. **Node.js** (v18 or later) - https://nodejs.org/
+2. **Rust** (latest stable) - https://rustup.rs/
+3. **Microsoft Visual Studio C++ Build Tools** - https://visualstudio.microsoft.com/visual-cpp-build-tools/
    - Select "Desktop development with C++" workload
-
 4. **WebView2** (usually pre-installed on Windows 10/11)
-   - If not installed: https://developer.microsoft.com/en-us/microsoft-edge/webview2/
 
-## Installation
+### Build Instructions
 
 ```bash
-# Clone or navigate to the project directory
+# Clone the repository
+git clone https://github.com/dan0dev/portkiller-win.git
 cd portkiller-win
 
-# Install Node.js dependencies
+# Install dependencies
 npm install
 
 # Run in development mode
@@ -51,18 +65,9 @@ npm run tauri dev
 npm run tauri build
 ```
 
-## Development
-
-```bash
-# Start development server (frontend only)
-npm run dev
-
-# Type checking
-npx tsc --noEmit
-
-# Build frontend only
-npm run build
-```
+Installers will be generated in:
+- `src-tauri/target/release/bundle/msi/` - MSI installer
+- `src-tauri/target/release/bundle/nsis/` - NSIS installer
 
 ## Project Structure
 
@@ -82,22 +87,6 @@ portkiller-win/
 │   └── types/           # TypeScript definitions
 └── dist/                # Built frontend assets
 ```
-
-## Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| Ctrl+R | Refresh ports |
-| Ctrl+K | Focus search |
-| Ctrl+, | Open settings |
-| Delete | Kill selected process |
-| Escape | Close panel/modal |
-
-## Build Output
-
-After running `npm run tauri build`, installers will be available in:
-- `src-tauri/target/release/bundle/msi/` - MSI installer
-- `src-tauri/target/release/bundle/nsis/` - NSIS installer
 
 ## Credits
 
