@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"Default capabilities for PortKiller","local":true,"windows":["main"],"permissions":["core:default","shell:allow-execute","shell:allow-spawn","notification:default","notification:allow-request-permission","notification:allow-is-permission-granted","notification:allow-show","store:default","autostart:default"]}}

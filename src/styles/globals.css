@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased;
+    overflow: hidden;
+  }
+
+  /* Minimal scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/20;
+  }
+}
+
+@layer components {
+  /* Glassmorphic sidebar */
+  .glass-sidebar {
+    background: rgba(28, 28, 28, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Status dot - simple and subtle */
+  .status-dot {
+    @apply w-2 h-2 rounded-full bg-accent-green;
+  }
+
+  /* Sidebar items */
+  .sidebar-section-title {
+    @apply px-3 py-2 text-[11px] font-medium text-text-muted uppercase tracking-wider;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-1.5 rounded-md text-sm text-text-secondary;
+    @apply hover:bg-white/5 transition-colors;
+  }
+
+  .sidebar-item.active {
+    @apply bg-white/10 text-text-primary;
+  }
+
+  /* Type badge - minimal, no icons */
+  .type-badge {
+    @apply px-2 py-0.5 rounded text-[11px] font-medium bg-white/5 text-text-secondary;
+  }
+
+  /* Buttons - minimal */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded-md transition-colors;
+    @apply focus:outline-none disabled:opacity-40;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent-blue/90 hover:bg-accent-blue text-white px-3 py-1.5 text-sm;
+  }
+
+  .btn-danger {
+    @apply btn bg-accent-red/90 hover:bg-accent-red text-white px-3 py-1.5 text-sm;
+  }
+
+  .btn-ghost {
+    @apply btn hover:bg-white/5 text-text-secondary px-2 py-1.5 text-sm;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white/5 hover:bg-white/10 text-text-primary px-3 py-1.5 text-sm;
+  }
+
+  /* Input - clean */
+  .input {
+    @apply bg-white/5 border border-white/5 rounded-md px-3 py-1.5 text-sm;
+    @apply focus:outline-none focus:border-white/20 placeholder-text-muted transition-colors;
+  }
+
+  /* Table rows */
+  .table-row {
+    @apply border-b border-white/[0.04] hover:bg-white/[0.02] transition-colors;
+  }
+
+  .table-row.selected {
+    @apply bg-accent-blue/10;
+  }
+
+  /* Header - darker */
+  .header {
+    @apply bg-bg-secondary border-b border-white/[0.06];
+  }
+
+  /* Panel */
+  .panel {
+    @apply bg-bg-secondary border-l border-white/[0.06];
+  }
+}
