@@ -1,6 +1,8 @@
 # PortKiller for Windows
 
-A modern, feature-rich port management tool for Windows built with Tauri 2.0, React, TypeScript, and Tailwind CSS.
+A Windows port of [Port Killer](https://github.com/jamiepine/port-killer) by [@jamiepine](https://github.com/jamiepine), originally built for macOS.
+
+This version has been rebuilt for Windows using Tauri 2.0, React, TypeScript, and Tailwind CSS.
 
 ## Features
 
@@ -96,6 +98,10 @@ portkiller-win/
 After running `npm run tauri build`, installers will be available in:
 - `src-tauri/target/release/bundle/msi/` - MSI installer
 - `src-tauri/target/release/bundle/nsis/` - NSIS installer
+
+## Credits
+
+This project is a Windows port of [Port Killer](https://github.com/jamiepine/port-killer) by [Jamie Pine](https://github.com/jamiepine). The original macOS version inspired this Windows adaptation.
 
 ## License
 
